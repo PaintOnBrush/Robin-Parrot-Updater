@@ -10,12 +10,15 @@
 var ParrotUpdaterVersion = 0.1;
 
 function getLatestCommit() {
+	console.log("11111111111111111111111111111111111111111111");
 	window.jQuery.ajax({
 		url: "https://api.github.com/repos/5a1t/parrot/git/refs/heads/master",
 		cache: false,
 		dataType: "jsonp"
-	}).done(function(data) {
+		console.log ("2222222222222222222222222222222222222222222");
+		}).done(function(data) {
 		console.dir(data["data"])
+		console.log ("3333333333333333333333333333333333333333333");
 		console.log("hmm: " + data["data"]["object"]["sha"]);
 		sha = data["data"]["object"]["sha"];;
 		window.jQuery.get('https://raw.githubusercontent.com/5a1t/parrot/master/robin.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
