@@ -53,7 +53,6 @@ function getLatestCommit() {
 			}
 			console.log('Current parrot-updater.user.js Version: ' + myVersion + " on Github: " + latestVersion);
 		});
-		*/
 
 
 	}).fail(function() {});
