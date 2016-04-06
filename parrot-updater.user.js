@@ -58,7 +58,7 @@ function getLatestCommit() {
 
 
 	}).fail(function() {});
-}
+};
 setInterval(function () {
 getLatestCommit();
 }, 60000);
