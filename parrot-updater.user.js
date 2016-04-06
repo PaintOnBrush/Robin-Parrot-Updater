@@ -3,15 +3,22 @@
 // @namespace   ParrotUpdater
 // @description Grabs latest versions of the scripts automatically.
 // @include     https://www.reddit.com/robin*
-// @version     0.01
+// @version     0.1
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @grant       none
 // @author      ptrakk, apostolique
 // ==/UserScript==
-var ParrotUpdaterVersion = 0.01;
+var ParrotUpdaterVersion = 0.1;
 
 function getLatestCommit() {
-	
+	window.jQuery.ajax({
+		url: "https://api.github.com/repos/5a1t/parrot/git/refs/heads/master",
+		cache: false,
+		dataType: "jsonp"
+	}).done(function(data) {
+		console.dir(data["data"])
+		console.log("hmm: " + data["data"]["object"]["sha"]);
+		sha = data["data"]["object"]["sha"];;
 		window.jQuery.get('https://raw.githubusercontent.com/5a1t/parrot/master/robin.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
 			var latestVersion = data.replace(/(\r\n|\n|\r)/gm, "");
 			latestVersion = latestVersion.substring(latestVersion.indexOf("// @version") + 11, latestVersion.indexOf("// @grant"));
