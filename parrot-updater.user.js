@@ -4,7 +4,6 @@
 // @description Grabs latest versions of the scripts automatically.
 // @include     https://www.reddit.com/robin*
 // @version     0.1
-// @require     http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @grant       none
 // @author      ptrakk, apostolique
 // ==/UserScript==
