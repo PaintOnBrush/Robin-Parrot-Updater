@@ -58,5 +58,6 @@ function getLatestCommit() {
 	}).fail(function() {});
 };
 setInterval(function () {
+console.log("IT'S WORKING YO :D:D");
 getLatestCommit();
 }, 60000);
