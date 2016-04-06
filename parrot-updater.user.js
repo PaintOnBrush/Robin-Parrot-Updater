@@ -11,11 +11,6 @@
 var ParrotUpdaterVersion = 0.01;
 
 function getLatestCommit() {
-	window.jQuery.ajax({
-	url: "https://api.github.com/repos/5a1t/parrot/git/refs/heads/master",
-		cache: false,
-		dataType: "jsonp"
-	}).done()
 	
 		window.jQuery.get('https://raw.githubusercontent.com/5a1t/parrot/master/robin.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
 			var latestVersion = data.replace(/(\r\n|\n|\r)/gm, "");
