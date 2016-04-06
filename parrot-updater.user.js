@@ -42,15 +42,15 @@ function getLatestCommit() {
 		}
 
 
-		window.jQuery.get('https://raw.githubusercontent.com/ptrakk/Robin-Parrot-Updater/master/parrot-updater.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
+		window.jQuery.get('https://raw.githubusercontent.com/ptrakk/Robin-Parrot-Updater/master/parrot-updater.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
 			var latestVersion = data.replace(/(\r\n|\n|\r)/gm, "");
 			latestVersion = latestVersion.substring(latestVersion.indexOf("// @version") + 11, latestVersion.indexOf("// @grant"));
 			latestVersion = parseFloat(latestVersion + 0.0000);
 			var myVersion = parseFloat(ParrotUpdaterVersion + 0.0000);
 			if (latestVersion > myVersion) {
-				update("ParrotUpdater", "parrot-updater.js", "https://github.com/ptrakk/Robin-Parrot-Updater/master/parrot-updater.js");
+				update("ParrotUpdater", "parrot-updater.user.js", "https://github.com/ptrakk/Robin-Parrot-Updater/master/parrot-updater.user.js");
 			}
-			console.log('Current parrot-updater.js Version: ' + myVersion + " on Github: " + latestVersion);
+			console.log('Current parrot-updater.user.js Version: ' + myVersion + " on Github: " + latestVersion);
 		});
 		*/
 
